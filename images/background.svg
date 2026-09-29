@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <!-- Placeholder painted Provence landscape. Replace with your own artwork later. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9ccc4"/>
+      <stop offset="0.55" stop-color="#e3ddcf"/>
+      <stop offset="1" stop-color="#ece4d2"/>
+    </linearGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9aa3a8"/>
+      <stop offset="1" stop-color="#b3b8b2"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ba58a"/>
+      <stop offset="1" stop-color="#aeb294"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8c9670"/>
+      <stop offset="1" stop-color="#77805c"/>
+    </linearGradient>
+    <!-- brush-stroke texture -->
+    <filter id="paint" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
+    </filter>
+    <filter id="canvas" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="2"/>
+      <feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.4  0 0 0 0 0.32  0 0 0 0.07 0"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="1.2"/></filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+
+  <!-- clouds -->
+  <g filter="url(#paint)" opacity="0.55" fill="#f3efe6">
+    <ellipse cx="300" cy="170" rx="260" ry="34"/>
+    <ellipse cx="820" cy="120" rx="340" ry="30"/>
+    <ellipse cx="1320" cy="200" rx="280" ry="36"/>
+    <ellipse cx="1050" cy="260" rx="200" ry="20"/>
+  </g>
+
+  <!-- distant mountains -->
+  <path filter="url(#paint)" fill="url(#far)" d="M0 470 C160 420 280 400 420 425 C560 450 640 395 800 390 C960 385 1080 430 1220 410 C1360 390 1480 420 1600 440 L1600 620 L0 620 Z"/>
+
+  <!-- mid hills with village -->
+  <path filter="url(#paint)" fill="url(#mid)" d="M0 560 C200 520 360 540 520 555 C700 572 860 520 1040 530 C1180 538 1300 480 1420 470 C1500 464 1560 480 1600 490 L1600 760 L0 760 Z"/>
+
+  <!-- hilltop village (Seillans-style) -->
+  <g filter="url(#soft)">
+    <rect x="1330" y="420" width="70" height="60" fill="#d8c3a0"/>
+    <polygon points="1325,420 1365,398 1405,420" fill="#b9745a"/>
+    <rect x="1410" y="400" width="26" height="90" fill="#dcc9a8"/>
+    <polygon points="1406,400 1423,378 1440,400" fill="#a9674f"/>
+    <rect x="1440" y="440" width="90" height="50" fill="#d3bd98"/>
+    <polygon points="1436,440 1485,420 1534,440" fill="#b77a5e"/>
+    <rect x="1270" y="455" width="70" height="40" fill="#dac7a6"/>
+    <polygon points="1266,455 1305,438 1344,455" fill="#be8064"/>
+    <rect x="1535" y="460" width="60" height="36" fill="#d6c19e"/>
+    <polygon points="1531,460 1565,444 1599,460" fill="#b3735a"/>
+  </g>
+
+  <!-- farmhouses -->
+  <g filter="url(#soft)">
+    <rect x="780" y="585" width="80" height="40" fill="#dbc8a6"/>
+    <polygon points="776,585 820,568 864,585" fill="#bb7d60"/>
+    <rect x="1110" y="600" width="60" height="34" fill="#d8c4a2"/>
+    <polygon points="1106,600 1140,586 1174,600" fill="#b8795c"/>
+  </g>
+
+  <!-- near fields and vineyard -->
+  <path filter="url(#paint)" fill="url(#near)" d="M0 690 C220 650 420 670 640 690 C860 710 1060 660 1280 668 C1420 673 1520 690 1600 700 L1600 1000 L0 1000 Z"/>
+  <g stroke="#66704c" stroke-width="5" opacity="0.55" filter="url(#paint)">
+    <line x1="900" y1="760" x2="1600" y2="730"/>
+    <line x1="880" y1="800" x2="1600" y2="775"/>
+    <line x1="860" y1="845" x2="1600" y2="825"/>
+    <line x1="840" y1="895" x2="1600" y2="880"/>
+    <line x1="820" y1="950" x2="1600" y2="940"/>
+  </g>
+
+  <!-- cypress trees -->
+  <g fill="#4f5a3c" filter="url(#paint)">
+    <ellipse cx="80" cy="560" rx="22" ry="150"/>
+    <ellipse cx="140" cy="600" rx="18" ry="120"/>
+    <ellipse cx="200" cy="640" rx="14" ry="90"/>
+    <ellipse cx="640" cy="620" rx="10" ry="60"/>
+    <ellipse cx="670" cy="630" rx="8" ry="48"/>
+    <ellipse cx="1000" cy="600" rx="9" ry="55"/>
+    <ellipse cx="1240" cy="470" rx="10" ry="62"/>
+    <ellipse cx="1260" cy="480" rx="8" ry="50"/>
+  </g>
+
+  <!-- olive trees in the foreground -->
+  <g filter="url(#paint)" opacity="0.9">
+    <ellipse cx="60" cy="900" rx="200" ry="120" fill="#8e9870"/>
+    <ellipse cx="200" cy="960" rx="180" ry="90" fill="#9ea67f"/>
+    <ellipse cx="1540" cy="930" rx="190" ry="110" fill="#8d976f"/>
+    <ellipse cx="1420" cy="980" rx="150" ry="70" fill="#a0a882"/>
+  </g>
+
+  <!-- olive branches framing the top corners -->
+  <g fill="#7c8558" opacity="0.8" filter="url(#soft)">
+    <ellipse cx="60" cy="40" rx="70" ry="14" transform="rotate(25 60 40)"/>
+    <ellipse cx="150" cy="70" rx="60" ry="12" transform="rotate(10 150 70)"/>
+    <ellipse cx="30" cy="120" rx="55" ry="11" transform="rotate(50 30 120)"/>
+    <ellipse cx="1540" cy="50" rx="70" ry="14" transform="rotate(-25 1540 50)"/>
+    <ellipse cx="1460" cy="90" rx="55" ry="11" transform="rotate(-10 1460 90)"/>
+  </g>
+
+  <!-- canvas grain over everything -->
+  <rect width="1600" height="1000" filter="url(#canvas)"/>
+</svg>
